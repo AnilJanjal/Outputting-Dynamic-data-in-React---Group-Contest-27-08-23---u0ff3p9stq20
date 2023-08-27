@@ -2,14 +2,20 @@ import React,{useState,useEffect} from 'react'
 import '../styles/App.css';
 const App = () => {
 //code here
-  return (
-    <div id="main">
-      <input id='input' onChange={}></input>
-      <button id='button' onClick={}>Click</button>
-      <p id='text'> Hello my name is ____ and I study at Newton School</p>
+  const [name, setName] = useState("____");
+  let dataN = "";
+  function store(e) {
+    dataN = e.target.value;
+  }
+  function final() {
+    setName(dataN);
+  }
+  <div id="main">
+      <input id="input" onChange={(e) => store(e)}></input>
+      <button id="button" onClick={final}> Click </button>
+      <p id="text"> Hello my name is {name} and I study at Newton School</p>
     </div>
-  )
-}
-
+  );
+};
 
 export default App;
